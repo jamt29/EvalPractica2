@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(MainActivity.this, MainActivity2.class );
+                startActivity(i);
             }
         });
     }
@@ -68,9 +68,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void vista2(View view) {
-        Intent i = new Intent(MainActivity.this, MainActivity2.class )
-    }
+
 
    /* @Override
     public boolean onSupportNavigateUp() {
