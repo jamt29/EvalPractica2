@@ -82,26 +82,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void guardarnota(View view) {
-        ConexionSQLite admin = new ConexionSQLite(this, "EvalBlocNotas.db", null, 1);
+        ConexionSQLite admin = new ConexionSQLite(this, "EvalBlocNotas", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
-        String titulo = ettitulo.getText().toString();
-        String descripcion = etdescripcion.getText().toString();
-        String autor = etautor.getText().toString();
+        String t = ettitulo.getText().toString();
+        String d = etdescripcion.getText().toString();
+        String a= etautor.getText().toString();
 
         ContentValues values = new ContentValues();
 
-        values.put("titulo", titulo);
-        values.put("descripcion", descripcion);
-        values.put("autor", autor);
+        values.put("titulo", t);
+        values.put("descripcion", d);
+        values.put("autor", a);
 
-        if (titulo.isEmpty()) {
+        if (t.isEmpty()) {
             ettitulo.setError("Campo Obligatorio");
 
-        } else if (descripcion.isEmpty()) {
+        } else if (d.isEmpty()) {
             etdescripcion.setError("Campo Obligatorio");
 
-        } else if (autor.isEmpty()) {
+        } else if (a.isEmpty()) {
             etautor.setError("Campo Obligatorio");
         } else {
 
@@ -110,9 +110,9 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Nota guardada correctamente", Toast.LENGTH_SHORT).show();
 
-            ettitulo.setText(" ");
-            etdescripcion.setText(" ");
-            etautor.setText(" ");
+            ettitulo.setText(null);
+            etdescripcion.setText(null);
+            etautor.setText(null);
 
        }
 
