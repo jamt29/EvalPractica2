@@ -1,7 +1,10 @@
 package com.itca.practica2;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,13 +22,14 @@ import com.itca.practica2.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-private EditText ettitulo, etdescripcion, etautor;
-        private Cursor fila;
+    private EditText ettitulo, etdescripcion, etautor;
+    private Cursor fila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +82,42 @@ ettitulo= (EditText) findViewById(R.id.ettitulo);
     }
 
     public void guardarnota(View view) {
-        Intent i = new Intent(MainActivity.this, MainActivity3.class);
-        startActivity(i);
+        ConexionSQLite admin = new ConexionSQLite(this, "EvalBlocNotas.db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String titulo = ettitulo.getText().toString();
+        String descripcion = etdescripcion.getText().toString();
+        String autor = etautor.getText().toString();
+
+        ContentValues values = new ContentValues();
+
+        values.put("titulo", titulo);
+        values.put("descripcion", descripcion);
+        values.put("autor", autor);
+
+        if (titulo.isEmpty()) {
+            ettitulo.setError("Campo Obligatorio");
+
+        } else if (descripcion.isEmpty()) {
+            etdescripcion.setError("Campo Obligatorio");
+
+        } else if (autor.isEmpty()) {
+            etautor.setError("Campo Obligatorio");
+        } else {
+
+            db.insert("tb_bloc", null, values);
+            db.close();
+
+            Toast.makeText(this, "Nota guardada correctamente", Toast.LENGTH_SHORT).show();
+
+            ettitulo.setText(" ");
+            etdescripcion.setText(" ");
+            etautor.setText(" ");
+
+        }
+
+
+
     }
 
 
