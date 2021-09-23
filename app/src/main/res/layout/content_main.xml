@@ -1,58 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E8DDDD"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
+        android:background="#E8DDDD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="326dp"
             android:layout_height="wrap_content"
+            android:background="#E8DDDD"
             android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TITULO:"
-            android:layout_marginTop="75dp"
-            android:layout_marginLeft="40dp"
-            />
-            <EditText
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
-                android:layout_marginLeft="10dp"
-                />
 
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DESCRIPCION:"
-                android:layout_marginTop="75dp"
                 android:layout_marginLeft="40dp"
-                />
+                android:layout_marginTop="75dp"
+                android:text="TITULO:" />
+
+            <EditText
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="75dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:background="#E8DDDD"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="75dp"
+                android:text="DESCRIPCION:" />
+
             <EditText
                 android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                />
+                android:layout_marginTop="75dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#E8DDDD"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -62,13 +69,21 @@
                 android:layout_marginLeft="40dp"
                 />
             <EditText
+                android:id="@+id/boton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="75dp"
                 android:layout_marginLeft="10dp"
-                />
+                android:onClick="boton" />
         </LinearLayout>
 
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Nota" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
