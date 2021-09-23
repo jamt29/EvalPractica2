@@ -1,5 +1,6 @@
 package com.itca.practica2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void vista2(View view) {
+        Intent i = new Intent(MainActivity.this, MainActivity2.class )
     }
 
    /* @Override
