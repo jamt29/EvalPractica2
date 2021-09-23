@@ -1,8 +1,8 @@
 package com.itca.practica2;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
-
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,15 +18,24 @@ import com.itca.practica2.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+private EditText ettitulo, etdescripcion, etautor;
+        private Cursor fila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+ettitulo= (EditText) findViewById(R.id.ettitulo);
+        etdescripcion= (EditText) findViewById(R.id.etdescripcion);
+        etautor= (EditText) findViewById(R.id.etautor);
+    
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
