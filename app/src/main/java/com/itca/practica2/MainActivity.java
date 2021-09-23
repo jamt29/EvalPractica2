@@ -120,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClick(View view) {
+        Intent i = new Intent(MainActivity.this, MainActivity2.class );
+        startActivity(i);
+    }
+
 
 
    /* @Override
