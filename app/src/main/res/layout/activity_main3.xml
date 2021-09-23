@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAB1A1"
+    android:orientation="vertical"
     tools:context=".MainActivity3">
 
     <LinearLayout
@@ -20,19 +22,19 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/back"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
                 android:clickable="true"
-                android:onClick="inicio"/>
+                android:onClick="inicio"
+                android:src="@drawable/back" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go Notas"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:onClick="gonotas"/>
+                android:onClick="gonotas"
+                android:text="Go Notas" />
 
 
         </LinearLayout>
@@ -41,8 +43,8 @@
         <LinearLayout
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="45dp">
+            android:layout_marginTop="45dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,37 +85,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AUTOR:"
-                android:layout_marginTop="75dp"
                 android:layout_marginLeft="40dp"
-                />
+                android:layout_marginTop="75dp"
+                android:text="AUTOR:" />
+
             <EditText
                 android:id="@+id/boton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
                 android:layout_marginLeft="10dp"
-                />
+                android:layout_marginTop="75dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BORRAR"
-                android:layout_marginRight="25dp"/>
+                android:layout_marginRight="25dp"
+                android:text="BORRAR" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="actualizar"/>
+                android:text="actualizar" />
 
         </LinearLayout>
     </LinearLayout>
