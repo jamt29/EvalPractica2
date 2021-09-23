@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ettitulo= (EditText) findViewById(R.id.ettitulo);
-        etdescripcion= (EditText) findViewById(R.id.etdescripcion);
-        etautor= (EditText) findViewById(R.id.etautor);
+        ettitulo = (EditText) findViewById(R.id.ettitulo);
+        etdescripcion = (EditText) findViewById(R.id.etdescripcion);
+        etautor = (EditText) findViewById(R.id.etautor);
     
 
 
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             etdescripcion.setText(" ");
             etautor.setText(" ");
 
-        }
+       }
 
 
 
