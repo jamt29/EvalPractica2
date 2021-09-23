@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void guardarnota(View view) {
+        Intent i = new Intent(MainActivity.this, MainActivity3.class);
+        startActivity(i);
+    }
+
 
 
    /* @Override

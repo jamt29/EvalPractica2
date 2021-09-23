@@ -4,21 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#E8DDDD"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    tools:context=".MainActivity3">
 
     <LinearLayout
-        android:background="#E8DDDD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:onClick="inicio"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go Notas"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:onClick="gonotas"/>
+
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:background="#E8DDDD"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="45dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +62,6 @@
         <LinearLayout
             android:layout_width="297dp"
             android:layout_height="wrap_content"
-            android:background="#E8DDDD"
             android:orientation="horizontal">
 
             <TextView
@@ -59,7 +82,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#E8DDDD"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -77,14 +99,24 @@
                 />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BORRAR"
+                android:layout_marginRight="25dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="actualizar"/>
 
+        </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guardar Nota"
-        android:onClick="guardarnota"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
