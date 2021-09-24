@@ -14,13 +14,12 @@ public class ConexionSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("create table tb_bloc(id integer NOT NULL PRIMARY KEY AUTOINCREMENT ," + "titulo varchar NOT NULL, descripcion varchar NOT NULL, autor varchar NOT NULL)");
-        db.execSQL("insert into tb_bloc(titulo, descripcion, autor)values( 'Cosas que hacer','Trabajdar en el modulo de comportamiento laboral','Byron')");
+        db.execSQL("create table tb_bloc(id integer not null primary key autoincrement, titulo text, descripcion text, autor text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("create table tb_bloc(id integer NOT NULL PRIMARY KEY AUTOINCREMENT ," + "titulo varchar NOT NULL, descripcion varchar NOT NULL, autor varchar NOT NULL)");
-        db.execSQL("insert into tb_bloc(titulo, descripcion, autor)values( 'Cosas que hacer','Trabajdar en el modulo de comportamiento laboral','Byron')");
-    }
+            db.execSQL("drop table if exists tb_bloc");
+            onCreate(db);
+          }
 }

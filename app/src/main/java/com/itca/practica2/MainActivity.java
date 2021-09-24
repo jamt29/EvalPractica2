@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ettitulo = findViewById(R.id.ettitulo);
+        /*ettitulo = findViewById(R.id.ettitulo);
         etdescripcion = findViewById(R.id.etdescripcion);
         etautor =  findViewById(R.id.etautor);
-    
+    */
 
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     public void guardarnota(View view) {
 
 
-        try {
+      /*  try {
             ConexionSQLite admin = new ConexionSQLite(this);
             SQLiteDatabase db = admin.getWritableDatabase();
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
            } catch (Exception e) {
         String msg = e.toString();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-    }
+    } */
 
     }
 

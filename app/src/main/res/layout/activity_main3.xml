@@ -4,126 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DAB1A1"
+    android:background="#E8DDDD"
     android:orientation="vertical"
     tools:context=".MainActivity3">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Practica2.AppBarOverlay"
+        >
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Practica2.PopupOverlay"
+            app:title="Modificar o Eliminar Nota"
+            />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:background="#E8DDDD"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="75dp"
+            android:text="TITULO:" />
+
+        <EditText
+            android:id="@+id/ettitulo"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="75dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:background="#E8DDDD"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="75dp"
+            android:text="DESCRIPCION:" />
+
+        <EditText
+            android:id="@+id/etdescripcion"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="75dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E8DDDD"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AUTOR:"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="40dp"
+            />
+        <EditText
+            android:id="@+id/etautor"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="45dp">
 
-        <LinearLayout
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:drawableLeft="@drawable/ic_delete"
+            android:layout_marginLeft="5dp"
+            android:text="Eliminar Nota"
+            android:onClick="delete">
 
+        </Button>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:clickable="true"
-                android:onClick="inicio"
-                android:src="@drawable/back" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:onClick="gonotas"
-                android:text="Go Notas" />
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="75dp"
-                android:text="TITULO:" />
-
-            <EditText
-                android:id="@+id/etmostrartitulo"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="75dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="297dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="75dp"
-                android:text="DESCRIPCION:" />
-
-            <EditText
-                android:id="@+id/etmostrardescripcion"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="75dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginLeft="5dp"
+            android:drawableLeft="@drawable/ic_update"
+            android:text="Update"
+            android:onClick="update">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="75dp"
-                android:text="AUTOR:" />
+        </Button>
 
-            <EditText
-                android:id="@+id/etmostrarautor"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="75dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="25dp"
-                android:text="BORRAR" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="actualizar" />
-
-        </LinearLayout>
     </LinearLayout>
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

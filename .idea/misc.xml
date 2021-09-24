@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/drawable/back.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/activity_main2.xml" value="0.22" />
+        <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/activity_main3.xml" value="0.25" />
+        <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/activity_principal.xml" value="0.25" />
         <entry key="..\:/Users/manto/Documents/GitHub/EvalPractica2/app/src/main/res/layout/content_main.xml" value="0.1" />
       </map>
     </option>

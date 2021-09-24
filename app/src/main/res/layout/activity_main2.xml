@@ -4,35 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDCEEA"
-
+    android:background="#E8DDDD"
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:text="Registro de Notas"
-            android:textSize="25dp" />
-
-        <ListView
-            android:id="@+id/rview"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp" />
+            android:theme="@style/Theme.Practica2.AppBarOverlay">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.Practica2.PopupOverlay"
+                app:title="Regstro de Notas Escritas"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="-40dp"
+                android:clickable="true"
+                android:onClick="regresar"
+                android:src="@drawable/back"/>
+        </com.google.android.material.appbar.AppBarLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/texView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <ListView
+        android:id="@+id/notesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
