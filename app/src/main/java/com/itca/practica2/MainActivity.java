@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ettitulo = (EditText) findViewById(R.id.ettitulo);
-        etdescripcion = (EditText) findViewById(R.id.etdescripcion);
-        etautor = (EditText) findViewById(R.id.etautor);
+        ettitulo = findViewById(R.id.ettitulo);
+        etdescripcion = findViewById(R.id.etdescripcion);
+        etautor =  findViewById(R.id.etautor);
     
 
 
@@ -82,48 +82,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void guardarnota(View view) {
-        ConexionSQLite admin = new ConexionSQLite(this, "EvalBlocNotas", null, 1);
-        SQLiteDatabase db = admin.getWritableDatabase();
 
-        String t = ettitulo.getText().toString();
-        String d = etdescripcion.getText().toString();
-        String a= etautor.getText().toString();
 
-        ContentValues values = new ContentValues();
+        try {
+            ConexionSQLite admin = new ConexionSQLite(this);
+            SQLiteDatabase db = admin.getWritableDatabase();
 
-        values.put("titulo", t);
-        values.put("descripcion", d);
-        values.put("autor", a);
+            String titulo = ettitulo.getText().toString();
+            String descripcion = etdescripcion.getText().toString();
+            String autor = etautor.getText().toString();
 
-        if (t.isEmpty()) {
-            ettitulo.setError("Campo Obligatorio");
+            ContentValues registro = new ContentValues();
+            registro.put("id", (Integer) null);
+            registro.put("titulo", titulo);
+            registro.put("descripcion", descripcion);
+            registro.put("autor", autor);
 
-        } else if (d.isEmpty()) {
-            etdescripcion.setError("Campo Obligatorio");
-
-        } else if (a.isEmpty()) {
-            etautor.setError("Campo Obligatorio");
-        } else {
-
-            db.insert("tb_bloc", null, values);
+            int result = (int) db.insert("tb_bloc", null, registro);
             db.close();
 
-            Toast.makeText(this, "Nota guardada correctamente", Toast.LENGTH_SHORT).show();
+            if (result > 0) {
+                Toast.makeText(this, "Se guardo el registro", Toast.LENGTH_SHORT).show();
+                ettitulo.setText(" ");
+                etdescripcion.setText(" ");
+                etautor.setText(" ");
+            } else {
+                Toast.makeText(this, "No Se guardo el registro", Toast.LENGTH_SHORT).show();
+            }
 
-            ettitulo.setText(null);
-            etdescripcion.setText(null);
-            etautor.setText(null);
-
-       }
-
-
+           } catch (Exception e) {
+        String msg = e.toString();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
 
     }
 
-    public void onClick(View view) {
-        Intent i = new Intent(MainActivity.this, MainActivity2.class );
-        startActivity(i);
-    }
+
 
 
 

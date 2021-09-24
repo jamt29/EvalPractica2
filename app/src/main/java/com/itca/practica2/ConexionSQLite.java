@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class ConexionSQLite extends SQLiteOpenHelper {
-    public ConexionSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public ConexionSQLite(@Nullable Context context) {
+        super(context,  "EvalBlocNotas.db", null, 1);
     }
 
     @Override
