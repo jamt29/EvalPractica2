@@ -26,6 +26,7 @@
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/Theme.Practica2.PopupOverlay"
                 app:title="Regstro de Notas Escritas"
+                app:titleTextColor="@color/black"
                 />
             <ImageView
                 android:layout_width="wrap_content"
